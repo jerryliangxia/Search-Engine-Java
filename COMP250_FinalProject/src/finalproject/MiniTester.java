@@ -250,91 +250,91 @@ public class MiniTester{
   return grade;
  }
 
-// private int testSorting(int testIdx) {		// success
-//        String comment = "[" + testIdx + "]: Test sorting method.\n";
-//        int maxScore = 10;
-//
-//        try {
-//            ArrayList<Integer> results;
-//            ArrayList<Integer> actualResults = new ArrayList<>();
-//            HashMap<Integer, Integer> map = new HashMap<>();
-//
-//            // check if fastSort was implemented
-//            for (int j = 0; j < 100; j++) {
-//                map.put(j, j);
-//            }
-//            results = Sorting.fastSort(map);
-//            if (results == null) {
-//                write(gradeString(0, maxScore, "Did not implement fastSort method.\n"));
-//                return 0;
-//            }
-//
-//            // test output
-//            for (int j = 0; j < 100; j++) {
-//                map.put(j, j);
-//                actualResults.add(100-j-1);
-//            }
-//            results = Sorting.fastSort(map);
-//            if (!actualResults.equals(results)) {
-//                write(gradeString(0, maxScore, "fastSort method did not successfully sort in decreasing order.\n"));
-//                return 0;
-//            }
-//           
-//            boolean tooSlow = false;
-//            // test complexity
-//            for (int i = 1000; i <= 100000; i *= 10) {
-//                System.out.println("Testing fastSort method with " + i + " elements...");
-//                map.clear();
-//                for (int j = 0; j <= i; j++) {
-//                    int val = j + (int)(Math.random() * (i-j+1));
-//                    map.put(val, val);
-//                }
-//
-//                long startTime = System.nanoTime();
-//                Sorting.slowSort(map);
-//                long endTime = System.nanoTime();
-//                long durationSlow = (endTime - startTime);
-////                long durationSlow = TimeUnit.NANOSECONDS.toMicros(endTime-startTime);
-//                System.out.println("time duration for slowSort: " + durationSlow + " ns");
-//                                
-//                map.clear();
-//                for (int j = 0; j <= i; j++) {
-//                    int val = j + (int)(Math.random() * (i-j+1));
-//                    map.put(val, val);
-//                }
-//                startTime = System.nanoTime();
-//                Sorting.fastSort(map);
-//                endTime = System.nanoTime();
-//                long durationFast = (endTime - startTime);
-////                long durationFast = TimeUnit.NANOSECONDS.toMicros(endTime-startTime);
-//                System.out.println("time duration for fastSort: " + durationFast + " ns");
-//
-//                if ((durationSlow/durationFast) >= 10) {
-//                    System.out.println("Implementation for fastSort fast enough for test case sample of " + i + " elements. \n");
-//                }
-//                else {
-//                    System.out.println("Implementation for fastSort not fast enough for test case sample of " + i + " elements. \n");
-//                    tooSlow = true;
-//                    break;
-//                }
-//            }
-//
-//            if (tooSlow) {
-//    write(gradeString(0, maxScore, comment));
-//    return 0;
-//   }
-//
-//   write(gradeString(maxScore, maxScore, comment));
-//        }
-//        catch (Exception e) {
-//            comment = comment + "Exception Found: " + e.toString() + "\n";
-//            e.printStackTrace();
-//            write(gradeString(0, maxScore, comment));
-//            return 0;
-//        }
-//
-//        return maxScore;
-// }
+ private int testSorting(int testIdx) {		// success
+        String comment = "[" + testIdx + "]: Test sorting method.\n";
+        int maxScore = 10;
+
+        try {
+            ArrayList<Integer> results;
+            ArrayList<Integer> actualResults = new ArrayList<>();
+            HashMap<Integer, Integer> map = new HashMap<>();
+
+            // check if fastSort was implemented
+            for (int j = 0; j < 100; j++) {
+                map.put(j, j);
+            }
+            results = Sorting.fastSort(map);
+            if (results == null) {
+                write(gradeString(0, maxScore, "Did not implement fastSort method.\n"));
+                return 0;
+            }
+
+            // test output
+            for (int j = 0; j < 100; j++) {
+                map.put(j, j);
+                actualResults.add(100-j-1);
+            }
+            results = Sorting.fastSort(map);
+            if (!actualResults.equals(results)) {
+                write(gradeString(0, maxScore, "fastSort method did not successfully sort in decreasing order.\n"));
+                return 0;
+            }
+           
+            boolean tooSlow = false;
+            // test complexity
+            for (int i = 1000; i <= 100000; i *= 10) {
+                System.out.println("Testing fastSort method with " + i + " elements...");
+                map.clear();
+                for (int j = 0; j <= i; j++) {
+                    int val = j + (int)(Math.random() * (i-j+1));
+                    map.put(val, val);
+                }
+
+                long startTime = System.nanoTime();
+                Sorting.slowSort(map);
+                long endTime = System.nanoTime();
+                long durationSlow = (endTime - startTime);
+//                long durationSlow = TimeUnit.NANOSECONDS.toMicros(endTime-startTime);
+                System.out.println("time duration for slowSort: " + durationSlow + " ns");
+                                
+                map.clear();
+                for (int j = 0; j <= i; j++) {
+                    int val = j + (int)(Math.random() * (i-j+1));
+                    map.put(val, val);
+                }
+                startTime = System.nanoTime();
+                Sorting.fastSort(map);
+                endTime = System.nanoTime();
+                long durationFast = (endTime - startTime);
+//                long durationFast = TimeUnit.NANOSECONDS.toMicros(endTime-startTime);
+                System.out.println("time duration for fastSort: " + durationFast + " ns");
+
+                if ((durationSlow/durationFast) >= 10) {
+                    System.out.println("Implementation for fastSort fast enough for test case sample of " + i + " elements. \n");
+                }
+                else {
+                    System.out.println("Implementation for fastSort not fast enough for test case sample of " + i + " elements. \n");
+                    tooSlow = true;
+                    break;
+                }
+            }
+
+            if (tooSlow) {
+    write(gradeString(0, maxScore, comment));
+    return 0;
+   }
+
+   write(gradeString(maxScore, maxScore, comment));
+        }
+        catch (Exception e) {
+            comment = comment + "Exception Found: " + e.toString() + "\n";
+            e.printStackTrace();
+            write(gradeString(0, maxScore, comment));
+            return 0;
+        }
+
+        return maxScore;
+ }
 
  public static void main(String[] args) {
   // TODO Auto-generated method stub
@@ -346,7 +346,7 @@ public class MiniTester{
   total += g.testAssignRanks(3);
   total += g.testComputeRanks(4);
   total += g.testGetResults0(5);
-  //total += g.testSorting(6);
+  total += g.testSorting(6);
   g.write(g.gradeString(total, 50, ""));
 
  }

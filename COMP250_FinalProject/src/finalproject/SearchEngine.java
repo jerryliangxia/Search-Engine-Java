@@ -4,6 +4,12 @@ import java.util.HashMap;
 import java.util.ArrayList;
 
 public class SearchEngine {
+	
+	/*
+	 * @author Jerry Xia
+	 * McGill ID 260917329
+	 */
+	
 	public HashMap<String, ArrayList<String> > wordIndex;   // this will contain a set of pairs (String, LinkedList of Strings)	
 	public MyWebGraph internet;
 	public XmlParser parser;

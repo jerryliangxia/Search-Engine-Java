@@ -5,6 +5,11 @@ import java.util.HashMap;
 import java.util.Map.Entry; // You may need it to implement fastSort
 
 public class Sorting{ //<K extends Comparable<K>>
+	
+	/*
+	 * @author Jerry Xia
+	 * McGill ID 260917329
+	 */
 
 	/*
 	 * This method takes as input an HashMap with values that are Comparable. 
